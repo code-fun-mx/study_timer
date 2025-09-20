@@ -1,6 +1,5 @@
 import streamlit as st
 import time
-import matplotlib.pyplot as plt
 
 st.set_page_config(page_title = '공부용 타이머', page_icon = '📖')
 
@@ -56,6 +55,7 @@ if st.button('**타이머 시작!**'):
             st.session_state.timer_secs = 60
             st.session_state.timer_mins -= 1
             if st.session_state.timer_mins == 0:
+                st.session_state.timer_mins = 59
                 if st.sessions_state.timer_hours == 0:
                     break
         time.sleep(1)
